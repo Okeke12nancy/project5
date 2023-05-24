@@ -20,6 +20,7 @@ const errorHandler = require("./middlewares/error");
 
 const auth = require("./routes/auth");
 const users = require("./routes/users");
+const paystack = require("./routes/paystack");
 
 // Rate limiting
 const limiter = rateLimit({
@@ -61,6 +62,7 @@ module.exports = ({ app }) => {
 
   app.use("/api/v1/auth", auth);
   app.use("/api/v1/users", users);
+  app.use("/api/v1/", paystack);
 
   // Dev logging middleware
   if (process.env.NODE_ENV === "development") {

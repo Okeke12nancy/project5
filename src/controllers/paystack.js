@@ -1,3 +1,5 @@
+const logger = require("../helpers/logger");
+
 class PaystackController {
   async initPayment(req, res) {
     try {
@@ -43,4 +45,4 @@ class PaystackController {
   }
 }
 
-export default new PaystackController();
+module.exports = new PaystackController();
